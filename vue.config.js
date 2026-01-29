@@ -1,16 +1,27 @@
 const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
+  // publicPath: "http://localhost:8080/",
   publicPath: "auto",
+  assetsDir: "",
   devServer: {
-    proxy: {
-      "^/api": {
-        target: "http://localhost:3000",
-        pathRewrite: { "^/api": "" }
-      }
-    }
+    port: 8080,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      // "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    },
+    // proxy: {
+    //   "^/api": {
+    //     target: "http://localhost:3000",
+    //     pathRewrite: { "^/api": "" }
+    //   }
+    // }
   },
   configureWebpack: {
+    optimization: {
+      splitChunks: false
+    },
     plugins: [
       new ModuleFederationPlugin({
         name: "droids_shop_remote",
@@ -21,21 +32,16 @@ module.exports = {
         shared: {
           vue: {
             singleton: true,
-            eager: true,
-            requiredVersion: "^2.6.11"
           },
           "vue-router": {
             singleton: true,
-            eager: true,
-            requiredVersion: "^3.1.6"
+            
           },
           vuex: {
             singleton: true,
-            eager: true,
-            requiredVersion: "^3.1.3"
           }
         }
       })
     ]
-  }
+  },
 };
