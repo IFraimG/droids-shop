@@ -1,5 +1,14 @@
 # homework
 
+### Configure docker
+```
+#### BUILD:
+docker build -t droids_shop_frontend .
+
+#### RUN:
+docker run -it -p 8080:8080 --rm --name droids_shop droids_shop_frontend
+```
+
 ## Project setup
 ```
 npm install

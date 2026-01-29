@@ -180,7 +180,7 @@ $shadow:  0 4.9px 2.4px rgba(0, 0, 0, 0.048),
       margin-top: 10px;
       margin-bottom: 30px;
       &:before {
-        content: url("../assets/droid.png");
+        content: url("@/assets/droid.png");
       }
     }
     .cart__image {
@@ -190,7 +190,7 @@ $shadow:  0 4.9px 2.4px rgba(0, 0, 0, 0.048),
       border: 3px solid #fff;
       margin-bottom: 10px;
       height: 150px;
-      background: url("../assets/Шахтёрские_колонии_Кесселя.png") 50% / cover;
+      background: url("@/assets/shaxt_keccel.png") 50% / cover;
     }
     .cart__text {
       margin-left: 20px;
@@ -241,7 +241,7 @@ $shadow:  0 4.9px 2.4px rgba(0, 0, 0, 0.048),
         display: flex;
         align-items: center;
         &:before {
-          content: url("../assets/eye.png");
+          content: url("@/assets/eye.png");
           padding-right: 5px;
         }
       }
@@ -253,7 +253,7 @@ $shadow:  0 4.9px 2.4px rgba(0, 0, 0, 0.048),
         cursor: pointer;
         user-select: none;
         &:before {
-          content: url("../assets/like.png");
+          content: url("@/assets/like.png");
           padding-right: 5px;
         }
       }
